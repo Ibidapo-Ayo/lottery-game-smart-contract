@@ -4,7 +4,7 @@ pragma solidity >=0.7.0 <0.9.0;
 
 contract Lottery {
     address public manager;
-    address[]  public players;
+    address[] public players;
 
     constructor() {
         manager = msg.sender;
@@ -16,14 +16,24 @@ contract Lottery {
         players.push(msg.sender);
     }
 
-    function pickRandomWinner() public returns (address) {
+    function pickRandomWinner() public onlyAdmin returns (address) {
         uint256 index = random() % players.length;
         address payable winner = payable(players[index]);
         winner.transfer(address(this).balance);
+        players = new address[](0);
         return winner;
     }
 
-    function random() public view returns (uint256) {
+    function returnEntries() public view onlyAdmin returns (address[] memory) {
+        return players;
+    }
+
+    modifier onlyAdmin() {
+        require(msg.sender == manager, "Only contract manager can call this function");
+        _;
+    }
+
+    function random() private view returns (uint256) {
         return uint256(keccak256(abi.encode(block.prevrandao)));
     }
 }

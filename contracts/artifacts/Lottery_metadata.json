@@ -64,12 +64,12 @@
 			},
 			{
 				"inputs": [],
-				"name": "random",
+				"name": "returnEntries",
 				"outputs": [
 					{
-						"internalType": "uint256",
+						"internalType": "address[]",
 						"name": "",
-						"type": "uint256"
+						"type": "address[]"
 					}
 				],
 				"stateMutability": "view",
@@ -89,7 +89,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/3_Ballot.sol": "Lottery"
+			"contracts/Lottery.sol": "Lottery"
 		},
 		"evmVersion": "cancun",
 		"libraries": {},
@@ -103,12 +103,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/3_Ballot.sol": {
-			"keccak256": "0xf32ad3e17e97f1efdc07c896ca9b60a11cf8bec36188ce57260e6cda54451f2e",
+		"contracts/Lottery.sol": {
+			"keccak256": "0xbe1379755f8b94c7222b44fbcbedc872774cd158df3fae9ffe62ae76972a5ac9",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://96556dcb850f26ee50a749fb0d0e8a77050937cd3ecfb6418addfd5b6cfc5168",
-				"dweb:/ipfs/QmRpwnx8aLeX7Jna9qtEEAwJLtD9PmaJxNnFaACWWPCE2r"
+				"bzz-raw://e99c595ef2bd65133895297adb800fcafb1d129b9fac8108a4b23547c23171c5",
+				"dweb:/ipfs/QmaVnopQiaeGba7Nh2SLz4vEesH7XvBznq3Gr6qDs6HFmi"
 			]
 		}
 	},
