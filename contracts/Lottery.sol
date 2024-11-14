@@ -6,8 +6,6 @@ contract Lottery {
     address public manager;
     address[] public players;
 
-    // mapping (address => bool) public playersHasEntered;
-
     constructor() {
         manager = msg.sender;
     }
@@ -15,7 +13,6 @@ contract Lottery {
     function enter() public payable {
         require(msg.value >= .01 ether, "Insuffient funds");
         require(msg.sender != manager, "Contract is not allowed to join");
-        // require(!playersHasEntered[msg.sender], "You have already entered the game")
         players.push(msg.sender);
     }
 
